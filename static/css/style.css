@@ -21,6 +21,7 @@ p {
 	font-size: 12px;
 }
 .col-main {
+	height: 100vh;
 	padding-left: 35px;
 	padding-right: 35px;
 	padding-top: 35px;
@@ -29,6 +30,7 @@ p {
 	flex: 4;
 }
 .col-side {
+	height: 100vh;
 	background-color: #FFDDDD;
 	/*flex*/
 	-webkit-flex: 1;

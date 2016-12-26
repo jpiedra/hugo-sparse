@@ -1,0 +1,18 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "col-main" }}
+	<div class="blogpost">
+		<div class="blogpost_head">
+			<div class="blogpost_head-date">
+				<h1>{{ .Date.Format "Jan 2 2006" }}</h1>
+			</div>
+			<div class="blogpost_head-title">
+				<h1>{{ .Title }}</h1>
+			</div>
+		</div>
+		<div class="blogpost_body">
+			<p>{{ .Content }}</p>
+		</div>
+	</div>
+{{ end }}
