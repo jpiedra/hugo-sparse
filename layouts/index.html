@@ -1,0 +1,24 @@
+<!-- Like your templates for single pages, will include header/footer -->
+	{{ partial "header.html" . }}
+	<div class="col-main">
+  	{{- range first 10 .Data.Pages }}
+	<!-- <h3><a href="{{ .Permalink }}">{{ .Title }}</a> - Posted {{ .Date }}</h3> -->
+		<div class="blogpost">
+			<div class="blogpost_head">
+				<div class="blogpost_head-date">
+					<h1>{{ .Date.Format "Jan 2 2006" }}</h1>
+				</div>
+				<div class="blogpost_head-title">
+					<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+				</div>
+			</div>
+			<div class="blogpost_body">
+				<p>{{ .Summary }}</p>
+				<a class="blogpost_body-more"  href="{{ .Permalink }}">Read more...</a>
+			</div>
+		</div>		
+	{{- end }}
+	</div>
+	<div class="col-side">
+	</div>
+{{ partial "footer.html" . }}

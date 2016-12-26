@@ -1,0 +1,169 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-family: 'Helvetica', sans-serif;
+}
+body {
+	display: -webkit-flex;
+	display: flex;
+	height: 100%;
+	margin: 0px;
+}
+h1 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 14px;	
+}
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+}
+.col-main {
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 35px;
+	/*flex*/
+	-webkit-flex: 4;
+	flex: 4;
+}
+.col-side {
+	background-color: #FFDDDD;
+	/*flex*/
+	-webkit-flex: 1;
+	flex: 1;
+}
+/*
+	blogpost: 
+		base element for the post node
+		max-width and min-width set
+		positioned in order to set 'foot'
+		margin 'auto' centers the elements
+		margin 'bottom' to add space between
+*/
+.blogpost {
+	background-color: #F3F3F3;
+	box-shadow: 3px 3px 4px #888;
+	max-width: 600px;
+	margin: auto;
+	margin-bottom: 35px;
+	position: relative;
+}
+/*
+	blogpost_head:
+		goes on the top of every 'blogpost' element
+		is a flexbox parent element, 
+		display set accordingly; positioned
+		children are 'blogpost_head-date' and 'head-title'
+		min-height required to allow growth ('head-title')
+*/
+.blogpost_head {
+	background-color: tan; 
+	display: -webkit-flex;
+	display: flex;
+	min-height: 48px;
+	width: 100%;
+}
+/*
+	blogpost_head-date:
+		first child to 'blogpost_head' and is also 
+		a flexbox parent element, so that
+		'head-date' children are centered
+		both vertically and horizontally
+		takes up 1/5 flexbox units
+*/
+.blogpost_head-date {
+	background-color: #FF5050;
+	color: white;
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+	min-height: 100%;
+	text-align: center;
+	/*flex*/
+	-webkit-flex: 1;
+	flex: 1;
+	-webkit-align-items: center;
+    	align-items: center;
+	-webkit-justify-content: center;
+    	justify-content: center;
+}
+/*
+	blogpost_head-title:
+		second child to 'blogpost_head' and is not
+		a flexbox parent; height set to auto
+		in order to grow with the content
+		(see above 'blogpost_head')
+		takes up 4/5 flexbox units
+*/
+.blogpost_head-title {
+	background-color: #D9D9D9;
+	display: flex;
+	height: auto;
+	min-height: 100%;
+	padding-left: 12px;
+	/*flex*/
+	-webkit-flex: 4;
+	flex: 4;
+	-webkit-align-items: center;
+    	align-items: center;
+}
+.blogpost_head-title a {
+	color: black;
+	text-decoration: none;
+}
+.blogpost_head-title a:hover {
+	text-decoration: underline;
+}
+.blogpost_body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	padding-top: 12px;
+	padding-bottom: 48px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+.blogpost_body-more {
+	color: red;
+}
+/*
+	blogpost_foot:
+		will contain the tags for the post
+		is set to ABSOLUTE in order to
+		cling to bottom of 'blogpost' node,
+		with the appropriate padding set
+		in 'blogpost_body' above
+*/
+.blogpost_foot {
+	bottom: 0px;
+	display: -webkit-flex;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	min-height: 48px;
+}
+.blogpost_foot-tag-name {
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+	min-height: 100%;
+	padding-left: 12px;
+	/*flex*/
+	-webkit-flex: 1;
+	flex: 1;
+}
+.blogpost_foot-tag-list {
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+	min-height: 100%;
+	text-align: center;
+	/*flex*/
+	-webkit-flex: 4;
+	flex: 4;
+	-webkit-align-items: center;
+    	align-items: center;
+	-webkit-justify-content: center;
+    	justify-content: center;
+}
