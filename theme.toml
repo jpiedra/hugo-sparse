@@ -3,9 +3,9 @@
 
 name = "Sparse"
 license = "MIT"
-licenselink = "https://github.com/jpiedra/sparse/blob/master/LICENSE.md"
+licenselink = "https://github.com/jpiedra/hugo-sparse/blob/master/LICENSE.md"
 description = "Simple theme with flat UI, solid color blocks and dropshadows"
-homepage = "https://github.com/jpiedra/sparse/"
+homepage = "https://github.com/jpiedra/hugo-sparse/"
 tags = ["flat", "shadows", "sparse"]
 # features = ["", ""]
 min_version = 0.17
