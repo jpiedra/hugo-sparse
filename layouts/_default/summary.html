@@ -1,0 +1,30 @@
+<div class="blogpost">
+	<div class="blogpost_head">
+		<div class="blogpost_head-date">
+			<h1>{{ .Date.Format "Jan 2 2006" }}</h1>
+		</div>
+		<div class="blogpost_head-title">
+			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		</div>
+	</div>
+	<div class="blogpost_body">
+		<p>{{ .Summary }}</p>
+		{{ if .Truncated }}				
+			<a class="blogpost_body-more"  href="{{ .Permalink }}">Read more →</a>
+		{{ end }}
+	</div>
+	{{ if isset .Params "tags" }}
+	<div class="blogpost_foot">
+		<div class="blogpost_foot">
+			<div class="blogpost_foot-tag-name">
+				<p>Tags:</p>
+			</div>
+			<div class="blogpost_foot-tag-list">
+				<p>
+				{{ delimit .Params.tags ", " }}
+				</p>
+			</div>
+		</div>	
+	</div>
+	{{ end }}
+</div>		

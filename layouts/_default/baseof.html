@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>
-      {{ block "title" . }}
-        {{ .Site.Title }}
-      {{ end }}
+    	{{ block "title" . }}
+        	{{ .Site.Title }}
+      	{{ end }}
     </title>
    	<!-- note the format used for the href attr., lets us accurately reference resources from wherever this template will get used! -->
   	<link type="text/css" rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
 	<link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet"> 
-  </head>
-  <body>
+</head>
+<body>
     <div class="col-main">
-      {{ block "col-main" . }}
-
-      {{ end }}
+    	{{ block "col-main" . }}
+	    {{ end }}
     </div>
     <div class="col-side">
-
+    	{{ block "col-side" . }}
+    	{{ end }}
     </div>
-  </body>
+</body>
 </html>
