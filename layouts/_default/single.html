@@ -15,5 +15,23 @@
 			<p>{{ .Content }}</p>
 			<a class="blogpost_body-more" href="{{ .Site.BaseURL }}">Return home</a>
 		</div>
+		{{ if isset .Params "tags" }}
+		<div class="blogpost_foot">
+			<div class="blogpost_foot">
+				<div class="blogpost_foot-tag-name">
+					<p>Tags:</p>
+				</div>
+				<div class="blogpost_foot-tag-list">
+					<ul>
+						{{ range $key, $val := .Params.tags }}
+							<li>
+								<a href="{{ "/tags/" | relLangURL }}{{ $val | urlize }}">{{ . }}</a>
+							</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>	
+		</div>
+		{{ end }}
 	</div>
 {{ end }}
