@@ -29,8 +29,13 @@ p {
 	-webkit-flex: 4;
 	flex: 4;
 }
+.col-main_pages {
+	max-width: 600px;
+	margin: auto;
+	text-align: center;
+}
 .col-side {
-	height: 100vh;
+	height: 150vh;
 	background-color: #FFDDDD;
 	/*flex*/
 	-webkit-flex: 1;
@@ -190,4 +195,11 @@ p {
 .blogpost_foot-tag-list ul > li > a {
 	color: white;
 	text-decoration: none;
+}
+/* hugo-provided pagination templates */
+.pagination {
+	list-style: none;
+}
+.pagination > li {
+	display: inline-block;
 }

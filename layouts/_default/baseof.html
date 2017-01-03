@@ -13,11 +13,15 @@
 </head>
 <body>
     <div class="col-main">
-    	{{ block "col-main" . }}
+    	{{ block "col-main-content" . }}
 	    {{ end }}
+	    <div class="col-main_pages" >
+		    {{ block "col-main-pages" . }}
+		    {{ end }}
+    	</div>
     </div>
     <div class="col-side">
-    	{{ block "col-side" . }}
+    	{{ block "col-side-content" . }}
     	{{ end }}
     </div>
 </body>

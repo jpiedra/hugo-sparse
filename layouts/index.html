@@ -1,6 +1,8 @@
-{{ define "col-main" }}
+{{ define "col-main-content" }}
   	{{ range .Paginator.Pages }}
   		{{ .Render "summary" }}
 	{{ end }}
+{{ end }}
+{{ define "col-main-pages" }}
 	{{ template "_internal/pagination.html" . }}
 {{ end }}
