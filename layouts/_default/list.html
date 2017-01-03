@@ -1,5 +1,9 @@
+{{ define "title" }}
+  	{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
 {{ define "col-main" }}
-  	{{ range first 10 .Data.Pages }}
-		{{ .Render "summary" }}		
+  	{{ range .Paginator.Pages }}
+  		{{ .Render "summary" }}
 	{{ end }}
+	{{ template "_internal/pagination.html" . }}
 {{ end }}
