@@ -9,6 +9,7 @@ html {
 body {
 	display: -webkit-flex;
 	display: flex;
+	flex-flow: row wrap;
 	height: 100%;
 	margin: 0px;
 }
@@ -19,27 +20,6 @@ h1 {
 p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
-}
-.col-main {
-	height: 100vh;
-	padding-left: 35px;
-	padding-right: 35px;
-	padding-top: 35px;
-	/*flex*/
-	-webkit-flex: 4;
-	flex: 4;
-}
-.col-main_pages {
-	max-width: 600px;
-	margin: auto;
-	text-align: center;
-}
-.col-side {
-	height: 150vh;
-	background-color: #FFDDDD;
-	/*flex*/
-	-webkit-flex: 1;
-	flex: 1;
 }
 /*
 	blogpost: 
@@ -205,6 +185,30 @@ p {
 .blogpost_foot-tag-list ul > li > a:hover {
 	background-color: #777;
 }
+.col-main {
+	height: 100vh;
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 35px;
+	/*flex*/
+	-webkit-flex: 4;
+	flex: 4;
+}
+.col-main_pages {
+	max-width: 600px;
+	margin: auto;
+	text-align: center;
+}
+.col-side {
+	height: 150vh;
+	background-color: #FFDDDD;
+	/*flex*/
+	-webkit-flex: 1;
+	flex: 1;
+}
+.navbar {
+	flex: 1 100%;
+}
 /*
 	pagination:
 		provided by Hugo's base pagination
@@ -244,4 +248,30 @@ p {
 */
 .pagination > .disabled > a:hover {
 	background-color: #333;
+}
+/*
+	navbar:
+		custom navbar, .navbar is a ul,
+		so style it directly
+*/
+.navbar {
+	background-color: #ff5050;
+	display: flex;
+	list-style: none;
+	margin: 0px;
+	min-height: 60px;
+	/*flex*/
+	-webkit-align-items: center;
+    align-items: center;
+}
+.navbar > li {
+	display: flex;
+	-webkit-flex: 1;
+	flex: 1;
+}
+.navbar > .navbar_brand > a {
+	color: white;
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
 }
