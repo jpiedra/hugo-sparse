@@ -22,14 +22,14 @@ p {
 	font-size: 12px;
 }
 /*
-	blogpost: 
-		base element for the post node
+	blogpanel: 
+		base element for standard, grey node
 		max-width and min-width set
 		positioned in order to set 'foot'
 		margin 'auto' centers the elements
 		margin 'bottom' to add space between
 */
-.blogpost {
+.blogpanel {
 	background-color: #F3F3F3;
 	box-shadow: 3px 3px 4px #888;
 	max-width: 600px;
@@ -38,14 +38,14 @@ p {
 	position: relative;
 }
 /*
-	blogpost_head:
-		goes on the top of every 'blogpost' element
+	blogpanel_head:
+		goes on the top of every 'blogpanel' element
 		is a flexbox parent element, 
 		display set accordingly; positioned
-		children are 'blogpost_head-date' and 'head-title'
+		children are 'blogpanel_head-date' and 'head-title'
 		min-height required to allow growth ('head-title')
 */
-.blogpost_head {
+.blogpanel_head {
 	background-color: tan; 
 	display: -webkit-flex;
 	display: flex;
@@ -53,14 +53,14 @@ p {
 	width: 100%;
 }
 /*
-	blogpost_head-date:
-		first child to 'blogpost_head' and is also 
+	blogpanel_head-date:
+		first child to 'blogpanel_head' and is also 
 		a flexbox parent element, so that
 		'head-date' children are centered
 		both vertically and horizontally
 		takes up 1/5 flexbox units
 */
-.blogpost_head-date {
+.blogpanel_head-date {
 	background-color: #FF5050;
 	color: white;
 	display: -webkit-flex;
@@ -77,14 +77,14 @@ p {
     justify-content: center;
 }
 /*
-	blogpost_head-title:
-		second child to 'blogpost_head' and is not
+	blogpanel_head-title:
+		second child to 'blogpanel_head' and is not
 		a flexbox parent; height set to auto
 		in order to grow with the content
-		(see above 'blogpost_head')
+		(see above 'blogpanel_head')
 		takes up 4/5 flexbox units
 */
-.blogpost_head-title {
+.blogpanel_head-title {
 	background-color: #D9D9D9;
 	display: flex;
 	height: auto;
@@ -96,14 +96,14 @@ p {
 	-webkit-align-items: center;
     align-items: center;
 }
-.blogpost_head-title a {
+.blogpanel_head-title a {
 	color: black;
 	text-decoration: none;
 }
-.blogpost_head-title a:hover {
+.blogpanel_head-title a:hover {
 	text-decoration: underline;
 }
-.blogpost_body {
+.blogpanel_body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
 	padding-top: 12px;
@@ -111,18 +111,18 @@ p {
 	padding-left: 12px;
 	padding-right: 12px;
 }
-.blogpost_body-more {
+.blogpanel_body-more {
 	color: red;
 }
 /*
-	blogpost_foot:
+	blogpanel_foot:
 		will contain the tags for the post
 		is set to ABSOLUTE in order to
-		cling to bottom of 'blogpost' node,
+		cling to bottom of 'blogpanel' node,
 		with the appropriate padding set
-		in 'blogpost_body' above
+		in 'blogpanel_body' above
 */
-.blogpost_foot {
+.blogpanel_foot {
 	bottom: 0px;
 	display: -webkit-flex;
 	display: flex;
@@ -130,7 +130,7 @@ p {
 	width: 100%;
 	min-height: 48px;
 }
-.blogpost_foot-tag-name {
+.blogpanel_foot-tag-name {
 	display: -webkit-flex;
 	display: flex;
 	height: auto;
@@ -142,15 +142,15 @@ p {
 	-webkit-align-items: center;
     align-items: center;
 }
-.blogpost_foot-tag-name > * {
+.blogpanel_foot-tag-name > * {
 	margin: 0;
 }
 /*
-	blogpost_foot-tag-list:
+	blogpanel_foot-tag-list:
 		is a div that contains a ul list
 		of all tags, NOT the ul itself!
 */
-.blogpost_foot-tag-list {
+.blogpanel_foot-tag-list {
 	display: -webkit-flex;
 	display: flex;
 	height: auto;
@@ -162,31 +162,30 @@ p {
 	-webkit-align-items: center;
     align-items: center;
 }
-.blogpost_foot-tag-list ul {
+.blogpanel_foot-tag-list ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0px;
 }
-.blogpost_foot-tag-list ul > li {
+.blogpanel_foot-tag-list ul > li {
 	display: inline-block;
 }
-.blogpost_foot-tag-list ul > li > a {
+.blogpanel_foot-tag-list ul > li > a {
 	color: white;
 	background-color: #999;
 	border-radius: 8px;
 	display: inline-block;
-	font-size: 12;
-	margin-left: 3px;
-	margin-right: 3px;
+	font-size: 16px;
+	margin: 3px;
 	padding-left: 6px;
 	padding-right: 6px;
 	text-decoration: none;
 }
-.blogpost_foot-tag-list ul > li > a:hover {
+.blogpanel_foot-tag-list ul > li > a:hover {
 	background-color: #777;
 }
 .col-main {
-	height: 100vh;
+	height: 150vh;
 	padding-left: 35px;
 	padding-right: 35px;
 	padding-top: 35px;
@@ -201,6 +200,9 @@ p {
 }
 .col-side {
 	height: 150vh;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
 	background-color: #FFDDDD;
 	/*flex*/
 	-webkit-flex: 1;
@@ -274,4 +276,12 @@ p {
 	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
+}
+/*
+	tagspanel
+		div using flex for styling, 
+		displays all tags on the website
+*/
+.tagspanel {
+
 }

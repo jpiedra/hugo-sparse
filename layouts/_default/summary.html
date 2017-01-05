@@ -1,25 +1,25 @@
-<div class="blogpost">
-	<div class="blogpost_head">
-		<div class="blogpost_head-date">
+<div class="blogpanel">
+	<div class="blogpanel_head">
+		<div class="blogpanel_head-date">
 			<h1>{{ .Date.Format "Jan 2 2006" }}</h1>
 		</div>
-		<div class="blogpost_head-title">
+		<div class="blogpanel_head-title">
 			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
 		</div>
 	</div>
-	<div class="blogpost_body">
+	<div class="blogpanel_body">
 		<p>{{ .Summary }}</p>
 		{{ if .Truncated }}				
-			<a class="blogpost_body-more"  href="{{ .Permalink }}">Read more →</a>
+			<a class="blogpanel_body-more"  href="{{ .Permalink }}">Read more →</a>
 		{{ end }}
 	</div>
 	{{ if isset .Params "tags" }}
-	<div class="blogpost_foot">
-		<div class="blogpost_foot">
-			<div class="blogpost_foot-tag-name">
+	<div class="blogpanel_foot">
+		<div class="blogpanel_foot">
+			<div class="blogpanel_foot-tag-name">
 				<p>Tags:</p>
 			</div>
-			<div class="blogpost_foot-tag-list">
+			<div class="blogpanel_foot-tag-list">
 				<ul>
 					{{ range $key, $val := .Params.tags }}
 						<li>

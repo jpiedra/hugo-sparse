@@ -1,10 +1,21 @@
-<ul>
-	<!-- 'tags' taxonomy defined in config.toml -->
-	{{ $data := .Site.Taxonomies.tags }}
-	<!-- iterate through the resulting list (map), like in single.html -->
-	{{ range $key, $val := $data}}
-		<li>
-			<a href="{{ "/tags/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>
-		</li>
-	{{ end }}
-</ul>
+<div class="blogpanel">
+	<div class="blogpanel_head">
+		<div class="blogpanel_head-title">
+			<h1>Tags</h1>
+		</div>
+	</div>
+	<div class="blogpanel_body">
+		<div class="blogpanel_foot-tag-list">
+			<ul>
+				<!-- 'tags' taxonomy defined in config.toml -->
+				{{ $data := .Site.Taxonomies.tags }}
+				<!-- iterate through the resulting list (map), like in single.html -->
+				{{ range $key, $val := $data}}
+					<li>
+						<a href="{{ "/tags/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>
+					</li>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+</div>
