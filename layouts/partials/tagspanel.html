@@ -1,0 +1,10 @@
+<ul>
+	<!-- 'tags' taxonomy defined in config.toml -->
+	{{ $data := .Site.Taxonomies.tags }}
+	<!-- iterate through the resulting list (map), like in single.html -->
+	{{ range $key, $val := $data}}
+		<li>
+			<a href="{{ "/tags/" | relLangURL }}{{ $key | urlize }}">{{ $key }}</a>
+		</li>
+	{{ end }}
+</ul>
