@@ -1,0 +1,21 @@
+<div class="blogpanel">
+	<div class="blogpanel_head">
+		<div class="blogpanel_head-title">
+			<h1>Recent Posts</h1>
+		</div>
+	</div>
+	<div class="blogpanel_body">
+		<div class="blogpanel_foot-post-list">
+			<ol>
+				<!-- inset (...) checks if custom param was set, sets how many links to show -->
+				{{ range first (.Site.Params.sp_recentamt | default 10) .Site.Pages }}
+					<li>
+						<a href="{{ .Permalink }}">
+							{{ .Title }} - Posted {{ .Date.Format "Jan 2 2006" }}
+						</a>
+					</li>
+				{{ end }}
+			</ol>
+		</div>
+	</div>
+</div>
