@@ -10,7 +10,6 @@ body {
 	display: -webkit-flex;
 	display: flex;
 	flex-flow: row wrap;
-	height: 100%;
 	margin: 0px;
 }
 h1 {
@@ -184,8 +183,40 @@ p {
 .blogpanel_foot-tag-list ul > li > a:hover {
 	background-color: #777;
 }
+/*
+	blogpanel_foot-post-list:
+		a list of recent posts
+		on the sidebar, under tags
+*/
+.blogpanel_foot-post-list {
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+	/*flex*/
+	-webkit-flex: 11;
+	flex: 11;
+}
+.blogpanel_foot-post-list ol {
+	margin: 0;
+	padding-left: 0px;
+}
+.blogpanel_foot-post-list ol > li {
+	display: block;
+}
+.blogpanel_foot-post-list ol > li > a {
+	color: #000;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 12px;
+}
+.blogpanel_foot-post-list ol > li > a:hover {
+	color: red;
+}
+/*
+	columns
+*/
 .col-main {
-	height: 150vh;
 	padding-left: 35px;
 	padding-right: 35px;
 	padding-top: 35px;
@@ -199,10 +230,10 @@ p {
 	text-align: center;
 }
 .col-side {
-	height: 150vh;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top: 20px;
+	min-height: 100vh;
 	background-color: #FFDDDD;
 	/*flex*/
 	-webkit-flex: 1;
@@ -261,7 +292,7 @@ p {
 	display: flex;
 	list-style: none;
 	margin: 0px;
-	min-height: 60px;
+	height: 60px;
 	/*flex*/
 	-webkit-align-items: center;
     align-items: center;
@@ -276,12 +307,4 @@ p {
 	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
-}
-/*
-	tagspanel
-		div using flex for styling, 
-		displays all tags on the website
-*/
-.tagspanel {
-
 }
