@@ -20,6 +20,24 @@ p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
 }
+pre {
+	white-space: pre-wrap;    
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;    
+    white-space: -o-pre-wrap;  
+    word-wrap: break-word;
+
+    overflow: auto !important;
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	font-size: 13px;
+	line-height: 1.42857143;
+	color: #333333;
+	background-color: #fff;
+	border: 1px solid #de9696;
+	border-left-width: 11px;
+}
 /*
 	blogpanel: 
 		base element for standard, grey node
