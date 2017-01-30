@@ -250,6 +250,7 @@ p {
 */
 .pagination {
 	list-style: none;
+	padding-left: 0px;
 }
 .pagination > li {
 	display: inline-block;
