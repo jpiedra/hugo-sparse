@@ -2,8 +2,8 @@
   	{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "col-main-content" }}
-  	{{ range .Paginator.Pages }}
-  		{{ .Render "summary" }}
+	{{ range .Paginator.Pages }}
+		{{ .Render "summary" }}
 	{{ end }}
 {{ end }}
 {{ define "col-main-pages" }}

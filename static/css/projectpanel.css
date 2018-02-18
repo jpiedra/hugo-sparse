@@ -1,0 +1,249 @@
+/*
+	projectpanel: 
+		base element for standard, grey node
+		max-width and min-width set
+		positioned in order to set 'foot'
+		margin 'auto' centers the elements
+		margin 'bottom' to add space between
+*/
+.projectpanel {
+	background-color: #C09090; 
+	box-shadow: 3px 3px 4px #888;
+	margin: auto;
+	margin-bottom: 35px;
+	position: relative;
+}
+/*
+	projectpanel_head:
+		goes on the top of every 'projectpanel' element
+		is a flexbox parent element, 
+		display set accordingly; positioned
+		children are 'projectpanel_head-date' and 'head-title'
+		min-height required to allow growth ('head-title')
+*/
+.projectpanel_head {
+	display: -webkit-flex;
+	display: flex;
+	min-height: 48px;
+	width: 100%;
+}
+/*
+	projectpanel_head-date:
+		first child to 'projectpanel_head' and is also 
+		a flexbox parent element, so that
+		'head-date' children are centered
+		both vertically and horizontally
+		takes up 1/5 flexbox units
+*/
+.projectpanel_head-date {
+	background-color: #FF5050;
+	color: white;
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+	
+	text-align: center;
+	/*flex*/
+	-webkit-flex: 1;
+	flex: 1;
+	-webkit-align-items: center;
+    align-items: center;
+	-webkit-justify-content: center;
+    justify-content: center;
+}
+/*
+	projectpanel_head-title:
+		second child to 'projectpanel_head' and is not
+		a flexbox parent; height set to auto
+		in order to grow with the content
+		(see above 'projectpanel_head')
+		takes up 4/5 flexbox units
+*/
+.projectpanel_head-title {
+	/*background-color: #D9D9D9;*/
+	display: flex;
+	height: auto;
+
+	padding-left: 12px;
+	/*flex*/
+	-webkit-flex: 4;
+	flex: 4;
+	-webkit-align-items: center;
+    align-items: center;
+}
+.projectpanel_head-title a {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	text-decoration: none;
+}
+.projectpanel_head-title a:hover {
+	text-decoration: underline;
+}
+.projectpanel_head-title h1 {
+	width: 100%;
+	text-align: center;
+}
+.projectpanel_body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	display: flex;
+	padding: 15px;
+	color: #eee;
+}
+.projectpanel_body-left {
+	-webkit-flex: 3;
+	flex: 3;
+	-webkit-align-items: center;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+.projectpanel_body-thumbnail {
+	-webkit-flex: 1;
+	flex: 1;
+}
+.projectpanel_body-left img {
+	width: 75%;
+	height: auto;
+}
+.projectpanel_body-right {
+	-webkit-flex: 5;
+	flex: 5;
+	-webkit-align-items: center;
+	align-items: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.projectpanel_body-right > div {
+	-webkit-flex: 1;
+	flex: 1;
+}
+.projectpanel_body-more {
+	color: red;
+}
+.projectpanel_section {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.projectpanel_section-title {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	color: white;
+}
+.projectpanel_section-thumbnail {
+	-webkit-flex: 1;
+	flex: 1;
+}
+.projectpanel_section-thumbnail > img {
+	width: 25%;
+	height: auto;
+	margin: 20px;
+}
+/*
+	projectpanel_foot:
+		will contain the tags for the post
+		is set to ABSOLUTE in order to
+		cling to bottom of 'projectpanel' node,
+		with the appropriate padding set
+		in 'projectpanel_body' above
+*/
+.projectpanel_foot {
+	bottom: 0px;
+	display: -webkit-flex;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	min-height: 48px;
+}
+.projectpanel_foot-tag-name {
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+
+	padding-left: 12px;
+	/*flex*/
+	-webkit-flex: 1;
+	flex: 1;
+	-webkit-align-items: center;
+    align-items: center;
+}
+.projectpanel_foot-tag-name > * {
+	margin: 0;
+}
+/*
+	projectpanel_foot-tag-list:
+		is a div that contains a ul list
+		of all tags, NOT the ul itself!
+*/
+.projectpanel_foot-tag-list {
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+
+	text-align: center;
+	/*flex*/
+	-webkit-flex: 11;
+	flex: 11;
+	-webkit-align-items: center;
+    align-items: center;
+}
+.projectpanel_foot-tag-list ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0px;
+}
+.projectpanel_foot-tag-list ul > li {
+	display: inline-block;
+}
+.projectpanel_foot-tag-list ul > li > a {
+	color: white;
+	background-color: #999;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 16px;
+	margin: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-decoration: none;
+}
+.projectpanel_foot-tag-list ul > li > a:hover {
+	background-color: #777;
+}
+/*
+	projectpanel_foot-post-list:
+		a list of recent posts
+		on the sidebar, under tags
+*/
+.projectpanel_foot-post-list {
+	display: -webkit-flex;
+	display: flex;
+	height: auto;
+	/*flex*/
+	-webkit-flex: 11;
+	flex: 11;
+}
+.projectpanel_foot-post-list ol {
+	margin: 0;
+	padding-left: 0px;
+}
+.projectpanel_foot-post-list ol > li {
+	display: block;
+}
+.projectpanel_foot-post-list ol > li > a {
+	color: #000;
+	border-radius: 8px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 12px;
+}
+.projectpanel_foot-post-list ol > li > a:hover {
+	color: red;
+}
