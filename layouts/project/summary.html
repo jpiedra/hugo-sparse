@@ -1,14 +1,19 @@
 {{ if isset .Params "panelcolor" }}
-    <div class="projectpanel" style="background-color: {{ .Params.panelcolor }}">
+    <div class="projectpanel" id="project__{{ .File }}" style="background-color: {{ .Params.panelcolor }}">
 {{ else }}
-    <div class="projectpanel">
+    <div class="projectpanel" id="project__{{ .File }}">
 {{ end }}
     <div class="projectpanel_head">
         <!--<div class="projectpanel_head-date">
             <h1>{{ .Date.Format "January 2 2006" }}</h1>
         </div>-->
         <div class="projectpanel_head-title">
-            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            <h1><a href="{{ .Params.link }}">{{ .Title }}</a></h1>
+        </div>
+        <div class="projectpanel_head-more">
+            <button onClick="toggleChevron(this, 'project__{{ .File }}')">
+                <i class="projectpanel_head-more_toggle fas fa-chevron-down fa-2x"></i>
+            </button>
         </div>
     </div>
     <div class="projectpanel_body">
@@ -33,21 +38,20 @@
                 {{ end }}
             </div>
             <div class="projectpanel_body-right_section2">
-                    {{ if isset .Params "section2_thumbnails" }}
-                        <h2 class="projectpanel_section-title">{{ .Params.section2_title }}</a></h2>
-                        <div class="projectpanel_body-right_section2 projectpanel_section">
-                            {{ range $key, $val := .Params.section2_thumbnails }}
-                                <div class="projectpanel_section-thumbnail">    
-                                    <img src="{{ $val }}" alt="{{ $key }}">
-                                </div>
-                            {{ end }}
-                        </div>
-                    {{ end }}
-                </div>
+                {{ if isset .Params "section2_thumbnails" }}
+                    <h2 class="projectpanel_section-title">{{ .Params.section2_title }}</a></h2>
+                    <div class="projectpanel_body-right_section2 projectpanel_section">
+                        {{ range $key, $val := .Params.section2_thumbnails }}
+                            <div class="projectpanel_section-thumbnail">    
+                                <img src="{{ $val }}" alt="{{ $key }}">
+                            </div>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </div>
         </div>
-        <!--<p>{{ .Summary }}</p>
-        {{ if .Truncated }}				
-            <a class="projectpanel_body-more"  href="{{ .Permalink }}">Read more →</a>
-        {{ end }}-->
+    </div>
+    <div id="project__{{ .File }}_summary" class="projectpanel_body_content-hidden">
+        <p>{{ .Content }}</p>
     </div>
 </div>		

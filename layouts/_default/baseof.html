@@ -6,13 +6,8 @@
     	{{ block "title" . }}
         	{{ .Site.Title }}
       	{{ end }}
-    </title>
-   	<!-- note the format used for the href attr., lets us accurately reference resources from wherever this template will get used! -->
-    <link type="text/css" rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
-	<link type="text/css" rel="stylesheet" href="{{ "/css/resp.css" | relURL }}">
-	<link type="text/css" rel="stylesheet" href="{{ "/css/blogpanel.css" | relURL }}">
-	<link type="text/css" rel="stylesheet" href="{{ "/css/projectpanel.css" | relURL }}">
-	<link href="https://fonts.googleapis.com/css?family=Nunito|Roboto|Montserrat" rel="stylesheet">
+	</title>
+	{{ partial "includes" . }}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

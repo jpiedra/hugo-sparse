@@ -72,9 +72,6 @@ pre {
 	-webkit-flex: 1;
 	flex: 1;
 }
-.navbar {
-	flex: 1 100%;
-}
 /*
 	pagination:
 		provided by Hugo's base pagination
@@ -125,8 +122,10 @@ pre {
 	background-color: #ff5050;
 	display: flex;
 	list-style: none;
-	margin: 0px;
+	margin: 0;
+	padding: 12px;
 	height: 60px;
+	width: 100%;
 	/*flex*/
 	-webkit-align-items: center;
     align-items: center;
@@ -136,9 +135,23 @@ pre {
 	-webkit-flex: 1;
 	flex: 1;
 }
-.navbar > .navbar_brand > a {
+
+.navbar-left {
+	flex: 8;
+	text-align: left;
+}
+.navbar-right {
+	flex: 2;
+	text-align: right;
+	display: flex;
+}
+.navbar-right > li {
+	flex: 1;
+	margin-right: 12px;
+}
+.navbar * {
 	color: white;
-	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
 	text-decoration: none;
 }

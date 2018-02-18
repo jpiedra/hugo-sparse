@@ -1,5 +1,18 @@
 <ul class="navbar">
-	<li class="navbar_brand">
-		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-	</li>
+	<div class="navbar-left">
+		<li class="navbar_brand">
+			<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		</li>
+	</div>
+	<div class="navbar-right">
+		<li>
+			<a href="{{ .Site.BaseURL }}/article">Articles</a>
+		</li>
+		<li>
+			<a href="{{ .Site.BaseURL }}/project">Projects</a>
+		</li>
+		<li>
+			<a href="{{ .Site.BaseURL }}/article">Contact</a>
+		</li>
+	</div>
 </ul>
