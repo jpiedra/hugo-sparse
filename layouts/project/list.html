@@ -2,7 +2,7 @@
   	{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "col-main-content" }}
-  	{{ range .Paginator.Pages }}
+  	{{ range .Paginator.Pages.Reverse }}
   		{{ .Render "summary" }}
 	{{ end }}
 {{ end }}

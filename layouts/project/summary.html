@@ -14,7 +14,9 @@
     <div class="projectpanel_body">
         <div class="projectpanel_body-left">
             <div class="projectpanel_body-thumbnail">
-                <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                <a href="{{ .Params.link }}">
+                    <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                </a>
             </div>
         </div>
         <div class="projectpanel_body-right">

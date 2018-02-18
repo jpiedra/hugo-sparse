@@ -11,13 +11,16 @@
     <link type="text/css" rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
 		<link type="text/css" rel="stylesheet" href="{{ "/css/resp.css" | relURL }}">
 		<link type="text/css" rel="stylesheet" href="{{ "/css/projectpanel.css" | relURL }}">
-	<link href="https://fonts.googleapis.com/css?family=Nunito|Open Sans|Montserrat" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito|Open Sans|Montserrat" rel="stylesheet">
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="{{ "/js/scroll.js" | relURL }}"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	{{ partial "navbar" . }}
     <div class="col-main">
-		<h1>Hero Unit Goes Here</h1>
+		<div class="hero_unit" style="height: 500px;"></div>
     	{{ block "col-main-content" . }}
 		{{ end }}
 		<!-- no side bar -->
