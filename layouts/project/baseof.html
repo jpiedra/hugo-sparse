@@ -16,10 +16,11 @@
 </head>
 <body>
 	{{ partial "navbar" . }}
-    <div class="col-main">
-		<div class="hero_unit" style="height: 500px;"></div>
-    	{{ block "col-main-content" . }}
-		{{ end }}
+		<div class="hero_unit-overlay"></div>
+		<div class="hero_unit"></div>
+		<div class="col-main">
+			{{ block "col-main-content" . }}
+			{{ end }}
 		<!-- no side bar -->
     </div>
 </body>
