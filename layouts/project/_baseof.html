@@ -15,19 +15,9 @@
 </head>
 <body>
 	{{ partial "navbar" . }}
-	<div class="col-main">
-		{{ block "col-main-content" . }}
-		{{ end }}
-		<div class="col-main_pages" >
-			{{ block "col-main-pages" . }}
-			{{ end }}
-		</div>
-	</div>
-	<div class="col-side">
-		{{ block "col-side-content" . }}
-			{{ partial "tagspanel" . }}
-			{{ partial "recentspanel" . }}
-		{{ end }}
-	</div>
+    <div class="col-main">
+    	{{ block "col-main-content" . }}
+	    {{ end }}
+    </div>
 </body>
 </html>
