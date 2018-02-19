@@ -17,13 +17,15 @@
         </div>
     </div>
     <div class="projectpanel_body">
-        <div class="projectpanel_body-left">
-            <div class="projectpanel_body-thumbnail">
-                <a href="{{ .Params.link }}">
-                    <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
-                </a>
+        {{ if isset .Params "thumbnail" }}
+            <div class="projectpanel_body-left">
+                <div class="projectpanel_body-thumbnail">
+                    <a href="{{ .Params.link }}">
+                        <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                    </a>
+                </div>
             </div>
-        </div>
+        {{ end }}
         <div class="projectpanel_body-right">
             <div class="projectpanel_body-right_section1">
                 {{ if isset .Params "section1_thumbnails" }}

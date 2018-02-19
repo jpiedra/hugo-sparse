@@ -10,14 +10,16 @@
 		{{ partial "includes" . }}
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="{{ "/js/scroll.js" | relURL }}"></script>
+		<!--<script type="text/javascript" src="{{ "/js/scroll.js" | relURL }}"></script>-->
 		<script type="text/javascript" src="{{ "/js/toggle.js" | relURL }}"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	{{ partial "navbar" . }}
-		<div class="hero_unit-overlay"></div>
-		<div class="hero_unit"></div>
+		<div class="hero_unit">
+			<h1>Recent Projects</h1>
+			<h2>Click <i class="fas fa-chevron-down fa-sm"></i> on each panel to toggle more or less information</h2>
+		</div>
 		<div class="col-main">
 			{{ block "col-main-content" . }}
 			{{ end }}
