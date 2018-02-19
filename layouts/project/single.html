@@ -1,41 +1,64 @@
-{{ define "main" }}
-<section id="main">
-  <h1 id="title">{{ .Title }}</h1>
-  <div>
-        <article id="content">
-           {{ .Content }}
-        </article>
-  </div>
-</section>
-<aside id="meta">
-    <div>
-    <section>
-      <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
-      <h5 id="wordcount"> {{ .WordCount }} Words </h5>
-    </section>
-    {{ with .Params.topics }}
-    <ul id="topics">
-      {{ range . }}
-        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    {{ with .Params.tags }}
-    <ul id="tags">
-      {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    </div>
-    <div>
-        {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-    </div>
-</aside>
+{{ define "title" }}
+  	{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
-
+{{ define "col-main-content" }}
+{{ if isset .Params "panelcolor" }}
+    <div class="projectpanel" id="project__{{ .File }}" style="background-color: {{ .Params.panelcolor }}">
+{{ else }}
+    <div class="projectpanel" id="project__{{ .File }}">
+{{ end }}
+    <div class="projectpanel_head">
+        <!--<div class="projectpanel_head-date">
+            <h1>{{ .Date.Format "January 2 2006" }}</h1>
+        </div>-->
+        <div class="projectpanel_head-title">
+            <h1><a href="{{ .Params.link }}">{{ .Title }}</a></h1>
+        </div>
+        <div class="projectpanel_head-more">
+            <button onClick="toggleChevron(this, 'project__{{ .File }}')">
+                <i class="projectpanel_head-more_toggle fas fa-chevron-down fa-2x"></i>
+            </button>
+        </div>
+    </div>
+    <div class="projectpanel_body">
+        {{ if isset .Params "thumbnail" }}
+            <div class="projectpanel_body-left">
+                <div class="projectpanel_body-thumbnail">
+                    <a href="{{ .Params.link }}">
+                        <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                    </a>
+                </div>
+            </div>
+        {{ end }}
+        <div class="projectpanel_body-right">
+            <div class="projectpanel_body-right_section1">
+                {{ if isset .Params "section1_thumbnails" }}
+                    <h2 class="projectpanel_section-title">{{ .Params.section1_title }}</a></h2>
+                    <div class="projectpanel_body-right_section1 projectpanel_section">
+                        {{ range $key, $val := .Params.section1_thumbnails }}
+                            <div class="projectpanel_section-thumbnail">
+                                <img class="projectpanel_section-thumbnail" src="{{ $val }}" alt="{{ $key }}">
+                            </div>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </div>
+            <div class="projectpanel_body-right_section2">
+                {{ if isset .Params "section2_thumbnails" }}
+                    <h2 class="projectpanel_section-title">{{ .Params.section2_title }}</a></h2>
+                    <div class="projectpanel_body-right_section2 projectpanel_section">
+                        {{ range $key, $val := .Params.section2_thumbnails }}
+                            <div class="projectpanel_section-thumbnail">    
+                                <img src="{{ $val }}" alt="{{ $key }}">
+                            </div>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <div id="project__{{ .File }}_summary" class="projectpanel_body_content-hidden">
+        <p>{{ .Content }}</p>
+    </div>
+</div>		
+{{ end }}
