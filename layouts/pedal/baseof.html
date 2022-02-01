@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+    	{{ block "title" . }}
+        	{{ .Site.Title }}
+      	{{ end }}
+    </title>
+	{{ partial "includes" . }}
+</head>
+<body>
+	{{ partial "navbar" . }}
+	<div class="col-main">
+		{{ block "col-main-content" . }}
+		{{ end }}
+		<div class="col-main_pages" >
+			{{ block "col-main-pages" . }}
+			{{ end }}
+		</div>
+	</div>
+	<div class="col-side">
+		{{ block "col-side-content" . }}
+			{{ partial "tagspanel" . }}
+			{{ partial "recentspanel" . }}
+		{{ end }}
+	</div>
+</body>
+</html>
